@@ -1,0 +1,33 @@
+retrieve cars/*[owners/ε[first-name="Alice" && last-name="Smith" && *[city="Rome"]]]
+extract color, owners/ε/ownership/km
+CollectionName:cars
+IDSelection:*,
+RETRIEVE
+Rnode 0 
+Rnode 1 [Tag="owners"]
+Rnode 2 [Tag="ε"]
+Rnode 3 [Tag="first-name"] [Val="Alice"]
+Rnode 4 [Tag="last-name"] [Val="Smith"]
+Rnode 5 
+Rnode 6 [Tag="city"] [Val="Rome"]
+Redge 0,1
+Redge 1,2
+Redge 2,3
+Redge 2,4
+Redge 2,5
+Redge 5,6
+EXTRACT
+Enode 0 [Tag="color"] [return]
+;
+Enode 0 [Tag="owners"]
+Enode 1 [Tag="ε"]
+Enode 2 [Tag="ownership"]
+Enode 3 [Tag="km"] [return]
+Eedge 0,1
+Eedge 1,2
+Eedge 2,3
+
+
+
+
+

@@ -1,0 +1,18 @@
+retrieve cars/1001,1023[color="Blue" && model[year="1999"]]
+extract owners/ε/first-name
+CollectionName:cars
+IDSelection:1001,1023
+RETRIEVE
+Rnode 0 
+Rnode 1 [Tag="color"] [Val="Blue"]
+Rnode 2 [Tag="model"]
+Rnode 3 [Tag="year"] [Val="1999"]
+Redge 0,1
+Redge 0,2
+Redge 2,3
+EXTRACT
+Enode 0 [Tag="owners"]
+Enode 1 [Tag="ε"]
+Enode 2 [Tag="first-name"] [return]
+Eedge 0,1
+Eedge 1,2

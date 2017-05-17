@@ -1,0 +1,26 @@
+retrieve cars/*[*[year="2013"] && owners/ε[last-name="Smith"]]
+extract model/name, owners/ε/ownership
+CollectionName:cars
+IDSelection:*,
+RETRIEVE
+Rnode 0 
+Rnode 1 [Tag="*"]
+Rnode 2 [Tag="year"] [Val="2013"]
+Rnode 3 [Tag="owners"]
+Rnode 4 [Tag="ε"]
+Rnode 5 [Tag="last-name"] [Val="Smith"]
+Redge 0,1
+Redge 1,2
+Redge 0,3
+Redge 3,4
+Redge 4,5
+EXTRACT
+Enode 0 [Tag="model"]
+Enode 1 [Tag="name"] [return]
+Eedge 0,1
+;
+Enode 0 [Tag="owners"]
+Enode 1 [Tag="ε"]
+Enode 2 [Tag="ownership"] [return]
+Eedge 0,1
+Eedge 1,2
